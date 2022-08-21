@@ -2,9 +2,8 @@ import turtle
 from turtle import Turtle, Screen
 import random
 
-
 graph = Turtle()
-graph.shape("triangle")
+graph.shape("arrow")
 turtle.colormode(255)
 
 
@@ -12,8 +11,8 @@ def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
-    random_color = (r, g, b)
-    return random_color
+    mixed_color = (r, g, b)
+    return mixed_color
 
 
 # for _ in range(4):
@@ -72,18 +71,18 @@ def random_color():
 #     tama.right(36)
 
 #
-def shape_sides(number_of_sides):
-    angle = 360 / number_of_sides
-    for _ in range(number_of_sides):
-        graph.pensize(5)
-        graph.speed(1)
-        graph.forward(100)
-        graph.right(angle)
+# def shape_sides(number_of_sides):
+#     angle = 360 / number_of_sides
+#     for _ in range(number_of_sides):
+#         graph.pensize(5)
+#         graph.speed(0)
+#         graph.forward(100)
+#         graph.right(angle)
 
 
-for shape_side_number in range(3, 11):
-    graph.color(random_color())
-    shape_sides(shape_side_number)
+# for shape_side_number in range(3, 11):
+#     graph.color(random_color())
+#     shape_sides(shape_side_number)
 
 # dotted line
 # for _ in range(15):
@@ -98,13 +97,32 @@ for shape_side_number in range(3, 11):
 # random movement:
 
 
-directions = [0, 90, 180, 270]
-for _ in range(500):
-    graph.pensize(10)
+# directions = [0, 90, 180, 270]
+# for _ in range(500):
+#     graph.pensize(10)
+#     graph.color(random_color())
+#     graph.speed(0)
+#     graph.forward(20)
+#     graph.setheading(random.choice(directions))
+
+graph.speed(0)
+
+for _ in range(200):
     graph.color(random_color())
-    graph.speed(0)
-    graph.forward(20)
-    graph.setheading(random.choice(directions))
+    graph.circle(100)
+    current_heading = graph.heading()
+    graph.setheading(current_heading + 3)
+
+
+
+
+
+
+
+
+
+
+
 
 screen = Screen()
 screen.exitonclick()
