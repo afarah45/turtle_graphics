@@ -16,59 +16,59 @@ def random_color():
 
 
 # for _ in range(4):
-#     tama.forward(100)
-#     tama.right(90)
+#     graph.forward(100)
+#     graph.right(90)
 # for _ in range(4):
-#     tama.forward(100)
-#     tama.left(90)
+#     graph.forward(100)
+#     graph.left(90)
 # for _ in range(4):
-#     tama.backward(100)
-#     tama.left(90)
+#     graph.backward(100)
+#     graph.left(90)
 # for _ in range(4):
-#     tama.backward(100)
-#     tama.right(90)
-
+#     graph.backward(100)
+#     graph.right(90)
+#
 # for _ in range(15):
-#     tama.forward(10)
-#     tama.penup()
-#     tama.forward(10)
-#     tama.pendown()
-
-
-# triangle
+#     graph.forward(10)
+#     graph.penup()
+#     graph.forward(10)
+#     graph.pendown()
+#
+#
+# # triangle
 # for _ in range(3):
-#     tama.forward(100)
-#     tama.right(120)
+#     graph.forward(100)
+#     graph.right(120)
 # # square
 # for _ in range(4):
-#     tama.forward(100)
-#     tama.right(90)
+#     graph.forward(100)
+#     graph.right(90)
 # # pentagon
 # for _ in range(5):
-#     tama.forward(100)
-#     tama.right(72)
+#     graph.forward(100)
+#     graph.right(72)
 # # hexagon
 # for _ in range(6):
-#     tama.forward(100)
-#     tama.right(60)
+#     graph.forward(100)
+#     graph.right(60)
 # # heptagon
 # for _ in range(7):
-#     tama.forward(100)
-#     tama.right(51)
+#     graph.forward(100)
+#     graph.right(51)
 # # octagon
 # for _ in range(8):
-#     tama.forward(100)
-#     tama.right(45)
-#
-# # nonagon
+#     graph.forward(100)
+#     graph.right(45)
+
+# Nonagon
 # for _ in range(9):
-#     tama.forward(100)
-#     tama.right(40)
+#     graph.forward(100)
+#     graph.right(40)
 #
 # # decagon
 # for _ in range(10):
-#     tama.forward(100)
-#     tama.right(36)
+#     graph.forward(100)
+#     graph.right(36)
 
 #
 # def shape_sides(number_of_sides):
@@ -107,22 +107,15 @@ def random_color():
 
 graph.speed(0)
 
-for _ in range(200):
-    graph.color(random_color())
-    graph.circle(100)
-    current_heading = graph.heading()
-    graph.setheading(current_heading + 3)
+
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        graph.color(random_color())
+        graph.circle(100)
+        graph.setheading(graph.heading() + size_of_gap)
 
 
-
-
-
-
-
-
-
-
-
+draw_spirograph(3)
 
 screen = Screen()
 screen.exitonclick()
