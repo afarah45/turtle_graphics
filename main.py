@@ -2,7 +2,6 @@ import turtle
 from turtle import Turtle, Screen
 import random
 
-# from colors import random_colors
 
 graph = Turtle()
 graph.shape("triangle")
